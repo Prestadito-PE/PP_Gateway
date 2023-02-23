@@ -1,15 +1,31 @@
 {
   "Routes": [
+    // route to login without token
     {
-      "UpstreamPathTemplate": "/security/api/users/{path}",
-      "UpstreamHttpMethod": [],
+      "UpstreamPathTemplate": "/security/api/users/login",
+      "UpstreamHttpMethod": [ "POST" ],
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
           "Port": 1001
         }
       ],
-      "DownstreamPathTemplate": "/api/users/{path}"
+      "DownstreamPathTemplate": "/api/users/login"
+    },
+    // route to collection "users"
+    {
+      "UpstreamPathTemplate": "/security/api/users/{path}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 1001
+        }
+      ],
+      "DownstreamPathTemplate": "/api/users/{path}",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
     }
   ],
   "GlobalConfiguration": {
