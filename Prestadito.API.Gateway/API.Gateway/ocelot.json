@@ -6,8 +6,8 @@
       "UpstreamHttpMethod": [ "POST" ],
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 1001
+          "Host": "qas-security.azurewebsites.net",
+          "Port": 443
         }
       ],
       "DownstreamPathTemplate": "/api/users/login"
@@ -18,8 +18,8 @@
       "UpstreamHttpMethod": [ "GET", "POST", "PUT" ],
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 1001
+          "Host": "qas-security.azurewebsites.net",
+          "Port": 443
         }
       ],
       "DownstreamPathTemplate": "/api/users/{path}",
