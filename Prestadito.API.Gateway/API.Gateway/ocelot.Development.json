@@ -1,0 +1,46 @@
+{
+  "Routes": [
+    // route to login without token
+    {
+      "UpstreamPathTemplate": "/security/api/login",
+      "UpstreamHttpMethod": [ "POST" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 1001
+        }
+      ],
+      "DownstreamPathTemplate": "/api/sessions/login"
+    },
+    // route to register user without token
+    {
+      "UpstreamPathTemplate": "/security/api/users",
+      "UpstreamHttpMethod": [ "POST" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 1001
+        }
+      ],
+      "DownstreamPathTemplate": "/api/users"
+    },
+    // route to collection "users"
+    {
+      "UpstreamPathTemplate": "/security/api/users/{path}",
+      "UpstreamHttpMethod": [ "GET", "PUT" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 1001
+        }
+      ],
+      "DownstreamPathTemplate": "/api/users/{path}",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:44300"
+  }
+}
