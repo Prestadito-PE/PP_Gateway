@@ -6,7 +6,7 @@
       "UpstreamHttpMethod": [ "POST" ],
       "DownstreamHostAndPorts": [
         {
-          "Host": "qas-security.azurewebsites.net",
+          "Host": "ppsecurity.azurewebsites.net",
           "Port": 443
         }
       ],
@@ -18,7 +18,7 @@
       "UpstreamHttpMethod": [ "POST" ],
       "DownstreamHostAndPorts": [
         {
-          "Host": "qas-security.azurewebsites.net",
+          "Host": "ppsecurity.azurewebsites.net",
           "Port": 443
         }
       ],
@@ -30,7 +30,7 @@
       "UpstreamHttpMethod": [ "GET", "PUT" ],
       "DownstreamHostAndPorts": [
         {
-          "Host": "qas-security.azurewebsites.net",
+          "Host": "ppsecurity.azurewebsites.net",
           "Port": 443
         }
       ],
